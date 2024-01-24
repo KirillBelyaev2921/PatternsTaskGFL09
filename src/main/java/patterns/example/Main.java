@@ -2,15 +2,14 @@ package patterns.example;
 
 import java.util.List;
 
-import static patterns.example.Movie.MovieType.*;
-
+import static patterns.example.strategy.MovieType.*;
 
 public class Main {
 
     public static void main(String[] args) {
         List<Rental> rentals = List.of(new Rental(new Movie("Rambo", REGULAR), 1),
                 new Rental(new Movie("Lord of the Rings", NEW_RELEASE), 4),
-                new Rental(new Movie("Harry Potter", CHILDRENS), 5));
+                new Rental(new Movie("Harry Potter", CHILDREN), 5));
 
         Customer customer = new Customer("John Doe", rentals);
         String statement = customer.statement();

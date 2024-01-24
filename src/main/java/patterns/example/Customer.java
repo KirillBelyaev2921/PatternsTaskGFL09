@@ -2,8 +2,6 @@ package patterns.example;
 
 import java.util.List;
 
-import static patterns.example.Movie.MovieType.NEW_RELEASE;
-
 @SuppressWarnings("StringConcatenationInLoop")
 class Customer {
     private final String name;
