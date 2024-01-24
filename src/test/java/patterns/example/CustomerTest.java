@@ -12,9 +12,12 @@ class CustomerTest {
 
 	@Test
 	void testStatement() {
-		List<Rental> rentals = List.of(new Rental(new Movie("Rambo", REGULAR), 1),
-				new Rental(new Movie("Lord of the Rings", NEW_RELEASE), 4),
-				new Rental(new Movie("Harry Potter", CHILDREN), 5));
+		List<Rental> rentals = List.of(new Rental(Movie.getBuilder().setTitle("Rambo")
+						.setPriceCode(REGULAR).build(), 1),
+				new Rental(Movie.getBuilder().setTitle("Lord of the Rings")
+						.setPriceCode(NEW_RELEASE).build(), 4),
+				new Rental(Movie.getBuilder().setTitle("Harry Potter")
+						.setPriceCode(CHILDREN).build(), 5));
 
 
 		Customer customer = new Customer("John Doe", rentals);
