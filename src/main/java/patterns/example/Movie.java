@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+// Add builder pattern because of many parameters.
 public class Movie implements Serializable {
     private final String title;
     private final MovieType priceCode;

@@ -3,6 +3,9 @@ package patterns.example.template;
 import patterns.example.Customer;
 import patterns.example.Rental;
 
+// Template-servant-strategy for customer to generate appropriate
+// custom String representation of customer.
+// Does not "print" anything to console or anywhere, but only gives result String.
 public abstract class CustomerPrinter {
 	private final StringBuilder result = new StringBuilder();
 	private final Customer customer;
@@ -14,14 +17,16 @@ public abstract class CustomerPrinter {
 	}
 
 	public String statement() {
-		result.append(header());
-		result.append(body());
-		result.append(tail());
+		result.append(header())
+				.append(body())
+				.append(tail());
 		return result.toString();
 	}
 
 	protected abstract String header();
+
 	protected abstract String tail();
+
 	protected final String getCustomerName() {
 		return customer.getName();
 	}

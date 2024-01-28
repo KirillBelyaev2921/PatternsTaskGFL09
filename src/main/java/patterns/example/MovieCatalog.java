@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
+// Encapsulate movie list and give iterator and stream to it.
 public class MovieCatalog implements Iterable<Movie>, Serializable {
 	private final List<Movie> movies = new ArrayList<>();
 
