@@ -1,5 +1,7 @@
 package patterns.example;
 
+import patterns.example.template.StringCustomerPrinter;
+
 import java.util.List;
 
 import static patterns.example.strategy.MovieType.*;
@@ -15,7 +17,7 @@ public class Main {
 						.setPriceCode(CHILDREN).build(), 5));
 
 		Customer customer = new Customer("John Doe", rentals);
-		String statement = customer.statement();
+		String statement = new StringCustomerPrinter(customer).statement();
 
 		System.out.println(statement);
 	}

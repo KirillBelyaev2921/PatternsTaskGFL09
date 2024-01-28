@@ -1,5 +1,7 @@
 package patterns.example;
 
+import patterns.example.template.CustomerPrinter;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
@@ -17,28 +19,6 @@ public class Customer implements Iterable<Rental> {
 
     public String getName() {
         return name;
-    }
-
-
-
-    public String statement() {
-        double totalAmount = 0;
-        int frequentRenterPoints = 0;
-        String result = "Rental Record for " + getName() + "\n";
-        for (Rental each : rentals) {
-            double thisAmount = each.getPriceForMovie();
-            // add frequent renter points
-            frequentRenterPoints++;
-            frequentRenterPoints += each.getFrequentRenterPoint();
-
-            //show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" + thisAmount + "\n";
-            totalAmount += thisAmount;
-        }
-        //add footer lines
-        result += "Amount owed is " + totalAmount + "\n";
-        result += "You earned " + frequentRenterPoints + " frequent renter points";
-        return result;
     }
 
 

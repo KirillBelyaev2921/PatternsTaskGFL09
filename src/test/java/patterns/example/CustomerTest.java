@@ -1,6 +1,7 @@
 package patterns.example;
 
 import org.junit.jupiter.api.Test;
+import patterns.example.template.StringCustomerPrinter;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ class CustomerTest {
 
 
 		Customer customer = new Customer("John Doe", rentals);
-		String statement = customer.statement();
+		String statement = new StringCustomerPrinter(customer).statement();
 
 		assertThat(statement, equalTo("""
 				Rental Record for John Doe
