@@ -30,6 +30,7 @@ class CustomerTest {
 					Lord of the Rings	12.0
 					Harry Potter	4.5
 				Amount owed is 18.5
-				You earned 4 frequent renter points"""));
+				You earned 4 frequent renter points
+				"""));
 	}
 }

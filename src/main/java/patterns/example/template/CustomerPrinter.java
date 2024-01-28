@@ -9,24 +9,24 @@ public abstract class CustomerPrinter {
 	private double totalAmount;
 	private int frequentRenterPoints;
 
-	protected CustomerPrinter(Customer customer) {
+	public CustomerPrinter(Customer customer) {
 		this.customer = customer;
 	}
 
 	public String statement() {
-		result.append(addHeader());
-		result.append(addMainBody());
-		result.append(addTail());
+		result.append(header());
+		result.append(body());
+		result.append(tail());
 		return result.toString();
 	}
 
-	protected abstract String addHeader();
-	protected abstract String addTail();
+	protected abstract String header();
+	protected abstract String tail();
 	protected final String getCustomerName() {
 		return customer.getName();
 	}
 
-	private String addMainBody() {
+	private String body() {
 		StringBuilder mainBody = new StringBuilder();
 		totalAmount = 0;
 		frequentRenterPoints = 0;
@@ -41,11 +41,13 @@ public abstract class CustomerPrinter {
 					.append(each.getMovie().getTitle())
 					.append("\t")
 					.append(thisAmount)
-					.append("\n");
+					.append(lineSeparator());
 			totalAmount += thisAmount;
 		}
 		return mainBody.toString();
 	}
+
+	protected abstract String lineSeparator();
 
 	protected double getTotalAmount() {
 		return totalAmount;
