@@ -1,12 +1,9 @@
 package patterns.example;
 
-import patterns.example.template.CustomerPrinter;
-
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
-@SuppressWarnings("StringConcatenationInLoop")
 public class Customer implements Iterable<Rental> {
     private final String name;
     private final List<Rental> rentals;
