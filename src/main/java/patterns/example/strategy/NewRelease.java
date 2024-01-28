@@ -1,6 +1,8 @@
 package patterns.example.strategy;
 
-public class NewRelease implements MovieType {
+import java.io.Serializable;
+
+public class NewRelease implements MovieType, Serializable {
 	@Override
 	public double getPriceForMovie(int daysRented) {
 		return daysRented * 3;

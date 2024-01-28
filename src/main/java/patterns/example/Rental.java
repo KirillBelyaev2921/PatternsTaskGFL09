@@ -1,7 +1,9 @@
 package patterns.example;
 
 
-public class Rental {
+import java.io.Serializable;
+
+public class Rental implements Serializable {
     private final Movie movie;
     private final int daysRented;
 

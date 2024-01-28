@@ -2,12 +2,13 @@ package patterns.example;
 
 import patterns.example.strategy.MovieType;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class MovieCatalog implements Iterable<Movie> {
+public class MovieCatalog implements Iterable<Movie>, Serializable {
 	private final List<Movie> movies = new ArrayList<>();
 
 	public void addMovie(Movie movie) {

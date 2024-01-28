@@ -2,10 +2,11 @@ package patterns.example;
 
 import patterns.example.strategy.MovieType;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Movie {
+public class Movie implements Serializable {
     private final String title;
     private final MovieType priceCode;
     private final String movieGenre;

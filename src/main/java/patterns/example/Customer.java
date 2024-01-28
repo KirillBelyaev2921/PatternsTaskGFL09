@@ -1,10 +1,11 @@
 package patterns.example;
 
+import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class Customer implements Iterable<Rental> {
+public class Customer implements Iterable<Rental>, Serializable {
     private final String name;
     private final List<Rental> rentals;
 
