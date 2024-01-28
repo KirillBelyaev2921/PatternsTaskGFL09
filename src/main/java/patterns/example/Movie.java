@@ -2,6 +2,8 @@ package patterns.example;
 
 import patterns.example.strategy.MovieType;
 
+import java.util.List;
+
 public class Movie {
     private final String title;
     private final MovieType priceCode;
@@ -9,11 +11,12 @@ public class Movie {
     private final String country;
     private final String description;
     private final String director;
-    private final String actors;
+    private final List<String> actors;
 
     private Movie(String title, MovieType priceCode,
                   String movieGenre, String country,
-                  String description, String director, String actors) {
+                  String description, String director,
+                  List<String> actors) {
         this.title = title;
         this.priceCode = priceCode;
         this.movieGenre = movieGenre;
@@ -31,6 +34,26 @@ public class Movie {
         return title;
     }
 
+    public String getMovieGenre() {
+        return movieGenre;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public List<String> getActors() {
+        return actors;
+    }
+
     public static MovieBuilder getBuilder() {
         return new MovieBuilder();
     }
@@ -42,7 +65,7 @@ public class Movie {
         private String country;
         private String description;
         private String director;
-        private String actors;
+        private List<String> actors;
 
         public MovieBuilder() {
         }
@@ -77,7 +100,7 @@ public class Movie {
             return this;
         }
 
-        public MovieBuilder setActors(String actors) {
+        public MovieBuilder setActors(List<String> actors) {
             this.actors = actors;
             return this;
         }
