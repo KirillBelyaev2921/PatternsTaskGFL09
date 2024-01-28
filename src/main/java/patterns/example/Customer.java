@@ -1,9 +1,11 @@
 package patterns.example;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Stream;
 
 @SuppressWarnings("StringConcatenationInLoop")
-class Customer {
+public class Customer implements Iterable<Rental> {
     private final String name;
     private final List<Rental> rentals;
 
@@ -16,6 +18,8 @@ class Customer {
     public String getName() {
         return name;
     }
+
+
 
     public String statement() {
         double totalAmount = 0;
@@ -38,4 +42,12 @@ class Customer {
     }
 
 
+    @Override
+    public Iterator<Rental> iterator() {
+        return rentals.iterator();
+    }
+
+    public Stream<Rental> stream() {
+        return rentals.stream();
+    }
 }
