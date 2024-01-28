@@ -10,10 +10,6 @@ import java.util.stream.Stream;
 public class MovieCatalog implements Iterable<Movie> {
 	private final List<Movie> movies = new ArrayList<>();
 
-	public List<Movie> getMovieList() {
-		return movies;
-	}
-
 	public void addMovie(Movie movie) {
 		movies.add(movie);
 	}
