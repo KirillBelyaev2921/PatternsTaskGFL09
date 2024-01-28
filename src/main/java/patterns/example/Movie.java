@@ -2,6 +2,7 @@ package patterns.example;
 
 import patterns.example.strategy.MovieType;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Movie {
@@ -61,11 +62,11 @@ public class Movie {
     public static class MovieBuilder {
         private String title;
         private MovieType priceCode;
-        private String movieGenre;
-        private String country;
-        private String description;
-        private String director;
-        private List<String> actors;
+        private String movieGenre = "";
+        private String country = "";
+        private String description = "";
+        private String director = "";
+        private List<String> actors = new ArrayList<>();
 
         public MovieBuilder() {
         }

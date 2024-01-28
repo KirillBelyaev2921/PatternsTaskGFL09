@@ -10,16 +10,19 @@ import static org.hamcrest.Matchers.equalTo;
 import static patterns.example.strategy.MovieType.*;
 
 class CustomerTest {
+	MovieCatalog movies = new MovieCatalog();
 
 	@Test
 	void testStatement() {
-		List<Rental> rentals = List.of(new Rental(Movie.getBuilder().setTitle("Rambo")
-						.setPriceCode(REGULAR).build(), 1),
-				new Rental(Movie.getBuilder().setTitle("Lord of the Rings")
-						.setPriceCode(NEW_RELEASE).build(), 4),
-				new Rental(Movie.getBuilder().setTitle("Harry Potter")
-						.setPriceCode(CHILDREN).build(), 5));
-
+		movies.addMovie(Movie.getBuilder().setTitle("Rambo")
+				.setPriceCode(REGULAR).build());
+		movies.addMovie(Movie.getBuilder().setTitle("Lord of the Rings")
+				.setPriceCode(NEW_RELEASE).build());
+		movies.addMovie(Movie.getBuilder().setTitle("Harry Potter")
+				.setPriceCode(CHILDREN).build());
+		List<Rental> rentals = List.of(new Rental(movies.findMovieByTitle("Rambo", ""), 1),
+				new Rental(movies.findMovieByTitle("Lord of the Rings", ""), 4),
+				new Rental(movies.findMovieByTitle("Harry Potter", ""), 5));
 
 		Customer customer = new Customer("John Doe", rentals);
 		String statement = new StringCustomerPrinter(customer).statement();
